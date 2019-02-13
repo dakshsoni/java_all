@@ -1,26 +1,16 @@
 class String1
 {
-public static void main(String s[])
+public static void main (String s[])
 {
-String s1="hii this is deepak how i can help you";
-System.out.println(s1.length());
-//String d[]=s1.split("");
-String d1[]=s1.split(" ",3);
-String d2[]=s1.split(" ",4);
-for(String d:s1.split(""))
-{
-System.out.println(d);
-System.out.println(d.length());
-}
-for(int i=0;i<d1.length;i++)
-{
-System.out.println(d1[i]);
-}
-for(int i=0;i<d2.length;i++)
-{
-System.out.println(d2[i]);
+String str=new String("Daksh");
+str=str.concat("Soni");
+String str1="nathusar";
+
+str=str.concat("sikar");
+String str2=str.concat("jaipur");
+System.out.println("new string="+str2);//dakshsonisikarjaipur
+System.out.println("String is="+str);//dakshsonisikar
+System.out.println("string constant pool="+str1);//nathusar
 }
 
-
-}
 }
