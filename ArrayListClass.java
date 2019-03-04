@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.lang.reflect.*;
 
-class CollectionInterface
+class ArrayListClass
 {
 	// this method use to print capacity of ArrayList initial capacity =10;
 	public static int cap(ArrayList a) throws Exception
