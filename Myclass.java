@@ -1,5 +1,5 @@
 import java.awt.*;
-import.java.sql.*;
+import java.sql.*;
 import java.awt.event.*;
 
 class Myclass extends Frame implements ActionListener
