@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+            }
+            .header
+            {
+                height: 550px;
+            }
+            center
+            {
+                height: 70px;
+                background-color: #33ffcc;
+                padding-top: 30px;
+                font-family: Impact;
+                font-size: 35px;
+            }
+            .leftright
+            {
+                height: 550px;
+                
+                background-color: #8ef2e0;
+            }
+            .left
+            {
+                float: left;
+                margin-left: 130px;
+                margin-top: 60px;
+                
+            }
+            .right
+            {
+                float: right;
+                margin-right: 50px;
+                 margin-top: 130px;
+            }
+
+            #name
+            {
+                padding-top: 10px;
+                font-family: Impact;
+                font-size: 30px;
+                padding-left: 3px;
+            }
+            #email
+            {
+                padding-top: 03px;
+                font-family: Impact;
+                font-size: 30px;
+                padding-left: 65px;
+            }
+            #dob
+            {
+                padding-top: 03px;
+                font-family: Impact;
+                font-size: 30px;
+                padding-left: 85px; 
+            }#gender
+            {
+               padding-top: 04px;
+                font-family: Impact;
+                font-size: 30px;
+                padding-left: 45px;
+            }
+            #password
+            {
+                padding-top: 03px;
+                font-family: Impact;
+                font-size: 30px;
+            }
+            .name
+            {
+                margin-top: 13px;
+                margin-left: 15px;
+                padding-left: 10px;
+                font-family: Arial;
+                font-size: 25px;
+                height: 40px;
+                width: 320px;
+                border: 1px;
+                border-bottom-color: #999999;
+                border-radius: 06px;
+            }
+            .signup
+            {
+                margin-top: 50px;
+                margin-left: 400px;
+                height: 40px;
+                width: 80px;
+                
+                border: 0px;
+                border-radius: 05px;
+                background-color: #9999ff;
+                font-family: Impact;
+                font-size: 25px;
+            }
+            #rightname
+            {
+                padding-top: 10px;
+                font-family: Impact;
+                font-size: 30px;
+                padding-right: 13px;
+            }
+            #rightpassword
+            {
+                padding-top: 03px;
+                font-family: Impact;
+                font-size: 30px;
+            }
+            .rightname
+            {
+                margin-top: 13px;
+                
+                padding-left: 10px;
+                font-family: Arial;
+                font-size: 25px;
+                height: 40px;
+                width: 320px;
+                border: 1px;
+                border-bottom-color: #999999;
+                border-radius: 06px;
+            }
+            .login
+            {
+                margin-top: 150px;
+                margin-left: 450px;
+                height: 40px;
+                width: 80px;
+                
+                border: 0px;
+                border-radius: 05px;
+                background-color: #9999ff;
+                font-family: Impact;
+                font-size: 25px;
+            }
+            
+            
+        </style>
+</head>
+    <body>
+        <div class="header">
+            <center>YOU CAN LOGIN OR SIGNUP HERE</center>
+            <div class="leftright">
+             
+                <div class="left">
+                    <form action="MyServlet" method="post">
+                    <table>
+                    <tr>
+                        <td id="name">USER NAME :</td>
+                            
+                        <td> <input type="text" placeholder="ENTER YOUR NAME" class="name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td id="email"> EMAIL :</td>
+                            
+                        <td> <input type="email" placeholder="ENTER YOUR GMAIL" class="name" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td id="dob"> DOB :</td>
+                            
+                        <td> <input type="text" placeholder="ENTER YOUR D.O.B" class="name" name="dob"></td>
+                    </tr>
+                    <tr>
+                        <td id="gender">GENDER :</td>
+                       
+                        <td>
+                            <select class="name" name="option">
+                                <option>MALE</option>
+                                <option>FEMALE</option>
+                                <option>OTHER</option>
+                                
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="password">PASSWORD :</td>
+                            
+                        <td> <input type="text" placeholder="ENTER YOUR PASSWORD" class="name" name="password"></td>
+                    </tr>
+                </table>
+                
+                    <input type="submit" value="Signup" class="signup">
+                </form>
+            </div> 
+            
+               
+            <div class="right">
+                <form action="LoginServlet" method="post">
+                        <table>
+                        <tr>
+                            <td id="rightname">USER NAME :</td>
+                            <td><input type="text" placeholder="ENTER YOUR NAME" class="rightname" name="name"></td>
+                        </tr>
+                        <tr>
+                        <td id="rightpassword">PASSWORD :</td>
+                            
+                        <td> <input type="text" placeholder="ENTER YOUR PASSWORD" class="rightname" name="password"></td>
+                        </tr>
+                        </table>
+                        <input type="submit" value="Login" class="login">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
