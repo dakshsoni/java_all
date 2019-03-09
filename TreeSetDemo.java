@@ -1,40 +1,80 @@
 import java.util.TreeSet;
-/*
-TreeSet -> it is concrete class. when we creating object of TreeSet it internally create a "BST" binary search tree where elements traverse in pre-order,post-Order, or in in-Order. as we know in whole collection three only two classes are there which can not applicable for heteroginous objects.
-or we can understanding insertion is in Dictionary order(alphabetic,numbers,or String{a,ab,abc,abcd,abcde.....})
-*/
+import java.util.Comparator;
+class IntId implements Comparator
+{
+	public int compare(Object o1,Object o2)
+	{
+		Student s1=(Student)o1;
+		Student s2=(Student)o2;
+		if(s1.id< s2.id)
+		{
+			return -1;
+		}
+		if(s1.id>s2.id)
+		{
+			return 1;
+		}
+		return 0;
+	}
+}
+class StringName implements Comparator
+{
+	public int compare(Object o1,Object o2)
+	{
+		Student s1=(Student)o1;
+		Student s2=(Student)o2;
+		return s1.name.compareTo(s2.name);
+	}
+}
 
+class Student 
 
+{
+	String name;int id;
+	Student(String name,int id)
+	{
+		this.name=name;
+		this.id=id;
+	}
+	public String toString()
+	{
+		return name +" "+id;
+	}
+}
 class TreeSetDemo
 {
 	public static void main(String s[])
 	{
-		TreeSet t=new TreeSet();
-	System.out.println("addind int type elements inside TreeSet");
-				t.add(2);
-				t.add(1);
-				t.add(7);
-				t.add(4);
-				t.add(1);
+		Comparator c=new StringName();
+		Comparator c1=new IntId();
+		TreeSet<Student> t = new TreeSet<Student>(c);
+		TreeSet<Student> t1 = new TreeSet<Student>(c1);
+		Student st=new Student("deepak",2);
+		Student st1=new Student("ajay",1);
+		Student st2=new Student("rahul",1);
+		Student st3=new Student("amit",3);
+		Student st4=new Student("ajay",4);
+		Student st5=new Student("bhagu",5);
+		Student st6=new Student("bahq",9);
+		Student st7=new Student("banty",7);
+		t.add(st);
+		t.add(st1);	
+		t.add(st3);
+		t.add(st2);
+		t.add(st4);
+		t.add(st7);
+		t.add(st6);
+		t.add(st5);	
+		
+		t1.add(st);
+		t1.add(st1);	
+		t1.add(st3);
+		t1.add(st2);
+		t1.add(st4);
+		t1.add(st7);
+		t1.add(st6);
+		t1.add(st5);
 		System.out.println(t);
-		
-		
-		
-		TreeSet t1=new TreeSet();
-		System.out.println("addind Sting type elements inside TreeSet");
-				t1.add("raman");
-				t1.add("aman");
-				t1.add("raju");
-				t1.add("raju");
-				t1.add("kamal");
 		System.out.println(t1);
-		
-	/*	System.out.println("now we try to to crete clone of t");
-		TreeSet t2=new TreeSet(t);
-		System.out.println(t2);
-		System.out.println("now we try to add string inside in t2 :"+" "+"as we know TreeSet not Allow Hetergenous data type");
-		t2.add("ajay");
-		System.out.println(t2);*/
-		
-	}
+		}
 }
