@@ -1,57 +1,55 @@
-class Thread1
+import java.util.Arrays;
+import java.util.Scanner;
+public class Test 
 {
-Thread1 t1;
-int data[] ={1,2,3,4,5,6,7,8,9,10};
-synchronized void m1()
-{
-for(int i=0;i<10;i++)
-{
-data[i]+=data[i];
-System.out.println(data[i]+"value:"+i);
-}
+	public String sortString(String s0)
+	{
+		char ch[]=s0.toCharArray();
+		 Arrays.sort(ch);
+		
+		
+	return new String(ch);	
+	}
+    public static void main(String s[])
+    {
+		Test t=new Test();
+		Scanner scr = new Scanner(System.in);
+		System.out.println("enter string :");
+		
+    String s1=scr.next();
+	System.out.println("enter another String :");
+    String s2= scr.next();
+	
+	s1=s1.toLowerCase();
+	s2=s2.toLowerCase();
+	
+    //String s3[]=
+    //String s4[]= {"p","p","a","l","e"};
 
-}
-void m2()
-{
-for(int i=9;i>=0;i--)
-{
-data[i]*=2;
-System.out.println(data[i]+"digit on multiply:"+i);
-}
-}
-}
-class Mythread extends Thread
-{
-	Thread1 t1;
-Mythread(Thread1 t1,String s2)
-{
-super(s2);
-this.t1=t1;
-start();
-}
-public void run()
-{
-String s1=getName();
-System.out.println("run method call");
-if(s1.equals("frist"))
-{
-System.out.println("frist thread start");
-t1.m1();
-}
-else
-{
-System.out.println("second thread start");
-t1.m2();
-}
-}
-}
-class Test
-{
-public static void main(String s[])
-{
-Thread1 t1=new Thread1();
-Mythread th=new Mythread(t1,"frist");
-Mythread th2=new Mythread(t1,"second");
-}
-}
+
+    s1=t.sortString(s1);
+	s2=t.sortString(s2);
+      
+    
+ boolean b=s1.equalsIgnoreCase(s2) ;
+    if(b == true)
+	{
+		  System.out.println( "your Entered string is match :"+b);
+	}
+	else
+	{
+		  System.out.println( "your Entered string cann't match please entered a valid string :"+b);
+	}
+	
+	
+
+
+	}
+
+    }
+
+    
+    
+    
+    
 
