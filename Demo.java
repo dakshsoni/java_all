@@ -1,35 +1,37 @@
-class Test
-{
-	private static Test t;
-	private int x;
-	private Test(int val)
-	{
-	x=val;
-	}
-	void show()
-	{
-	System.out.println(x);
-	System.out.println(t);
-	}
-		public static Test Rohit(int z)
-		{
-		if(t==null)
-		{
-		t=new Test(z);
-		}
-		return t;
-		}
 
-}
-class Demo
+public class Demo
 {
-public static void main(String s[])
+    public static void main(String s[])
 {
-Test t1,t2;
-t1=Test.Rohit(10);
-t1.show();
-t2=Test.Rohit(20);
-t2.show();
-
+    System.out.println(Thread.currentThread().getName()+"is started");
+ThreadDemo ref=new ThreadDemo();
+ref.start();
+try{Thread.sleep(1000);}
+catch(InterruptedException e)
+{
+    System.out.println("main thread Exception handle");}
+System.out.println("no Interrupt");
 }
+    
+   
+}
+class ThreadDemo extends Thread
+{
+ public void run()
+    {
+    System.out.println("our run method");
+    Thread ref=Thread.currentThread();
+    ref.setName("ThreadDemo");
+    System.out.println(ref.getName()+"is started");
+    System.out.println(ref.getName()+"going to sleep");
+    try
+    {
+    Thread.sleep(10000);
+    }
+    catch(InterruptedException e)
+    {
+    System.out.println("thread interrupted");
+     }
+    System.out.println(ref.getName()+"sleep time over");
+    }
 }
